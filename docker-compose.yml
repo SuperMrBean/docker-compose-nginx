@@ -7,7 +7,7 @@ services:
      image: nginx:latest
      #容器的映射端口
      ports:
-       - 80:80
+       - 8080:80
      #定义挂载点         
      volumes:
        - ./html:/usr/share/nginx/html
@@ -16,3 +16,7 @@ services:
        - ./logs:/var/log/nginx
      #docker 重启后，容器自启动
      restart: always
+     # 打开标准输入，可以接受外部输入
+     stdin_open: true
+     # 伪终端
+     tty: true
